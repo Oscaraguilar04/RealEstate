@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Esme Rodriguez — a private practice for clients who value clarity, discretion, and considered results."
+    />
+    <title>Esme Rodriguez</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="nav-shell">
+        <a class="logo" href="#home" aria-label="Esme Rodriguez, home">
+          <span class="logo-mark" aria-hidden="true">ER</span>
+          <span class="logo-name">Esme Rodriguez</span>
+        </a>
+
+        <nav class="nav" id="primary-nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a class="nav-link is-active" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#services">Services</a></li>
+            <li><a class="nav-link" href="#work">Work</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a class="btn btn-nav" href="#contact">Book a Call</a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open menu"
+        >
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+          <span class="menu-toggle-bar"></span>
+        </button>
+      </div>
+
+      <div class="mobile-nav" id="mobile-nav" hidden>
+        <nav aria-label="Mobile">
+          <ul class="mobile-nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary mobile-nav-cta" href="#contact">Book a Call</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Private practice · Est. 2018</p>
+          <h1>
+            <span class="hero-name">Esme Rodriguez</span>
+            <span class="hero-line">Clarity for decisions that cannot be rushed.</span>
+          </h1>
+          <p class="hero-lede">
+            A discreet advisory practice for clients who expect a calm process,
+            precise communication, and a standard of care that feels personal.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Start a Conversation</a>
+            <a class="btn btn-ghost" href="#work">View Selected Work</a>
+          </div>
+        </div>
+
+        <figure class="hero-visual reveal">
+          <img
+            src="assets/esme-portrait.jpg"
+            alt="Portrait of Esme Rodriguez in a black blazer against a dark background"
+            width="1024"
+            height="1536"
+          />
+          <figcaption class="hero-caption">
+            <span>Esme Rodriguez</span>
+            <span>Advisor</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section about" id="about">
+        <div class="section-heading reveal">
+          <p class="section-index">01</p>
+          <p class="eyebrow">About</p>
+        </div>
+
+        <div class="about-grid">
+          <figure class="about-portrait reveal">
+            <img
+              src="assets/esme-about.jpg"
+              alt="Close portrait of Esme Rodriguez"
+              width="1024"
+              height="1024"
+              loading="lazy"
+            />
+          </figure>
+
+          <div class="about-copy reveal">
+            <h2>A practice built around attention, not volume.</h2>
+            <p>
+              Esme works with a small number of clients at a time. The work is
+              straightforward: understand the brief, protect what matters, and
+              move with intention. She is known for quiet follow-through and for
+              making complex decisions feel manageable.
+            </p>
+            <p class="about-value">
+              The value is simple. You get a clear point of contact, honest
+              counsel, and a process that respects your time.
+            </p>
+          </div>
+        </div>
+
+        <ul class="stats reveal" aria-label="Highlights">
+          <li>
+            <span class="stat-value">12</span>
+            <span class="stat-label">Years in practice</span>
+          </li>
+          <li>
+            <span class="stat-value">180+</span>
+            <span class="stat-label">Clients advised</span>
+          </li>
+          <li>
+            <span class="stat-value">98%</span>
+            <span class="stat-label">Referral &amp; return rate</span>
+          </li>
+          <li>
+            <span class="stat-value">Licensed</span>
+            <span class="stat-label">Independent advisor</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section services" id="services">
+        <div class="section-intro reveal">
+          <div>
+            <p class="section-index">02</p>
+            <p class="eyebrow">Services</p>
+            <h2>How the work is structured.</h2>
+          </div>
+          <p class="section-lede">
+            Four focused offerings, written so they can be tailored as the
+            practice takes a more specific shape. Each engagement begins with a
+            private conversation.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-number">01</span>
+            <h3>Consultation</h3>
+            <p>
+              A private working session to define the brief, the constraints,
+              and the standard you expect before any plan is set in motion.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">02</span>
+            <h3>Strategy</h3>
+            <p>
+              A clear path for timing, positioning, and the decisions that
+              actually move the work forward — without unnecessary noise.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">03</span>
+            <h3>Representation</h3>
+            <p>
+              Hands-on advocacy from first conversation through close, with
+              communication you can trust and details that stay accounted for.
+            </p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="service-number">04</span>
+            <h3>Advisory</h3>
+            <p>
+              Ongoing counsel for clients who prefer a long-term relationship
+              over a one-off transaction. Available by arrangement.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section work" id="work">
+        <div class="section-intro reveal">
+          <div>
+            <p class="section-index">03</p>
+            <p class="eyebrow">Selected work</p>
+            <h2>A few recent studies.</h2>
+          </div>
+          <p class="section-lede">
+            Placeholder projects for this first template. Each card is ready to
+            be replaced with a live case once the portfolio is confirmed.
+          </p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card work-card-featured reveal">
+            <div class="work-media">
+              <img
+                src="assets/work-atrium.jpg"
+                alt="Dimly lit living room with a sculptural sofa and city view at dusk"
+                width="1536"
+                height="1024"
+                loading="lazy"
+              />
+            </div>
+            <div class="work-body">
+              <p class="work-category">Private residence</p>
+              <h3>The Atrium Residence</h3>
+              <p>
+                A considered relocation for a family moving into the city.
+                The brief asked for calm rooms, strong light, and a plan that
+                could hold for the next decade.
+              </p>
+              <a class="text-link" href="#contact">View Project</a>
+            </div>
+          </article>
+
+          <article class="work-card work-card-side reveal">
+            <div class="work-media">
+              <img
+                src="assets/work-kitchen.jpg"
+                alt="Dark wood kitchen with a marble island and warm under-cabinet lighting"
+                width="1024"
+                height="1536"
+                loading="lazy"
+              />
+            </div>
+            <div class="work-body">
+              <p class="work-category">Interior study</p>
+              <h3>Oak &amp; Marble Kitchen</h3>
+              <p>
+                A kitchen rebuilt around daily ritual: honest materials, quiet
+                storage, and light that works from morning through evening.
+              </p>
+              <a class="text-link" href="#contact">View Project</a>
+            </div>
+          </article>
+
+          <article class="work-card work-card-wide reveal">
+            <div class="work-media">
+              <img
+                src="assets/work-suite.jpg"
+                alt="Quiet luxury bedroom with off-white linens and a brass lamp at twilight"
+                width="1536"
+                height="1024"
+                loading="lazy"
+              />
+            </div>
+            <div class="work-body">
+              <p class="work-category">Hospitality</p>
+              <h3>The Evening Suite</h3>
+              <p>
+                A private suite designed for rest after a long day. Low light,
+                generous proportion, and a material palette that stays out of
+                the way.
+              </p>
+              <a class="text-link" href="#contact">View Project</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="cta-band" id="cta" aria-labelledby="cta-heading">
+        <div class="cta-inner reveal">
+          <p class="eyebrow eyebrow-dark">Next step</p>
+          <h2 id="cta-heading">If the work should feel this considered, we should talk.</h2>
+          <p>
+            A short conversation is often enough to know whether we should work
+            together. No presentation. No pressure. Just a clear first exchange.
+          </p>
+          <a class="btn btn-dark" href="#contact">Request a Call</a>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="section-intro reveal">
+          <div>
+            <p class="section-index">04</p>
+            <p class="eyebrow">Contact</p>
+            <h2>Begin with a note.</h2>
+          </div>
+          <p class="section-lede">
+            Share a little about what you need. This form is front-end only for
+            now — submissions stay on the page until a later integration.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="you@example.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                placeholder="What would you like to discuss?"
+                required
+              ></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <aside class="contact-aside reveal">
+            <div class="contact-block">
+              <h3>Email</h3>
+              <a href="mailto:hello@esmerodriguez.com">hello@esmerodriguez.com</a>
+            </div>
+            <div class="contact-block">
+              <h3>Studio hours</h3>
+              <p>Monday – Friday<br />9:00 – 5:00, by appointment</p>
+            </div>
+            <div class="contact-block">
+              <h3>Social</h3>
+              <ul class="social-list">
+                <li><a href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
+                <li><a href="#" aria-label="LinkedIn (placeholder)">LinkedIn</a></li>
+                <li><a href="#" aria-label="Pinterest (placeholder)">Pinterest</a></li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-name">Esme Rodriguez</p>
+          <p>A private practice for considered work.</p>
+        </div>
+
+        <nav aria-label="Footer">
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <ul class="footer-social">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Pinterest</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Esme Rodriguez. All rights reserved.</p>
+        <a class="back-to-top" href="#home">Back to top</a>
+      </div>
+    </footer>
+
+    <button class="to-top" id="to-top" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
