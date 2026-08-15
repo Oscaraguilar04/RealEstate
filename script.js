@@ -308,6 +308,13 @@
       stepsEl.appendChild(li);
     });
 
+    var pathLabel = document.getElementById("journey-path-label");
+    if (pathLabel) {
+      pathLabel.textContent = journeyState.path === "buy" ? "Buyer journey" : "Seller journey";
+    }
+    if (stepsEl.closest(".journey")) {
+      stepsEl.closest(".journey").setAttribute("data-active-path", journeyState.path);
+    }
     indexEl.textContent = pad;
     titleEl.textContent = current.title;
     copyEl.textContent = current.copy;
@@ -385,9 +392,7 @@
 
   function prefillContact(intent, message) {
     if (intentField && intent) intentField.value = intent;
-    if (messageField && message) {
-      if (!messageField.value.trim()) messageField.value = message;
-    }
+    if (messageField && message) messageField.value = message;
   }
 
   if (ctaEl) {

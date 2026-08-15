@@ -1155,6 +1155,19 @@ ul {
   min-height: 240px;
 }
 
+.journey-path-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.journey[data-active-path="sell"] .journey-path-label,
+.journey[data-active-path="sell"] .journey-tab.is-active {
+  color: var(--accent);
+}
+
 .journey-step-index {
   font-size: 0.72rem;
   letter-spacing: 0.2em;
