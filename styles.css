@@ -622,9 +622,10 @@ ul {
 
 .work-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "featured side"
+    "featured featured"
+    "side palm"
     "wide wide";
   gap: 1.2rem;
 }
@@ -635,17 +636,18 @@ ul {
   min-width: 0;
 }
 
-.work-card-featured,
-.work-card-side {
-  height: 100%;
-}
-
 .work-card-featured {
   grid-area: featured;
 }
 
 .work-card-side {
   grid-area: side;
+  height: 100%;
+}
+
+.work-card-palm {
+  grid-area: palm;
+  height: 100%;
 }
 
 .work-card-wide {
@@ -656,7 +658,29 @@ ul {
   align-items: stretch;
 }
 
+.work-price-tag {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  margin: 0;
+  padding: 0.45rem 0.85rem;
+  background: rgba(11, 11, 11, 0.82);
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+}
+
+.work-meta {
+  margin-top: 0.4rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
 .work-media {
+  position: relative;
   overflow: hidden;
   background: var(--bg-raised);
 }
@@ -675,11 +699,12 @@ ul {
 
 .work-card-featured .work-media img,
 .work-card:not(.work-card-wide) .work-media img {
-  min-height: 320px;
+  min-height: 280px;
+  aspect-ratio: 16 / 10;
 }
 
 .work-card-featured .work-media img {
-  min-height: 560px;
+  min-height: 420px;
 }
 
 .work-card:hover .work-media img {
@@ -1055,6 +1080,7 @@ ul {
     grid-template-areas:
       "featured"
       "side"
+      "palm"
       "wide";
   }
 
