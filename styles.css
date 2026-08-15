@@ -291,7 +291,7 @@ ul {
 
 .nav-list {
   display: flex;
-  gap: 1.7rem;
+  gap: 1.35rem;
 }
 
 .nav-link {
@@ -761,6 +761,24 @@ ul {
   margin: 0 auto 2rem;
 }
 
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.btn-outline-dark:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+
 /* --------------------------------------------
    Contact
    -------------------------------------------- */
@@ -789,7 +807,8 @@ ul {
 }
 
 .field input,
-.field textarea {
+.field textarea,
+.field select {
   width: 100%;
   background: transparent;
   border: 0;
@@ -798,6 +817,21 @@ ul {
   padding: 0.85rem 0;
   outline: none;
   transition: border-color 0.25s var(--ease);
+}
+
+.field select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position: calc(100% - 12px) calc(50% + 2px), calc(100% - 6px) calc(50% + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  color: var(--text);
+}
+
+.field select option {
+  background: var(--bg-raised);
+  color: var(--text);
 }
 
 .field textarea {
@@ -811,12 +845,14 @@ ul {
 }
 
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.field select:focus {
   border-bottom-color: var(--accent);
 }
 
 .field.is-error input,
-.field.is-error textarea {
+.field.is-error textarea,
+.field.is-error select {
   border-bottom-color: #c47a74;
 }
 
@@ -974,8 +1010,291 @@ ul {
 }
 
 /* --------------------------------------------
+   Intent split
+   -------------------------------------------- */
+
+.intent-split {
+  width: min(calc(100% - 2.5rem), var(--max));
+  margin: 0 auto 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+.intent-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 2.2rem 2rem 2rem;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.intent-card:hover {
+  border-color: rgba(196, 165, 116, 0.55);
+  transform: translateY(-3px);
+}
+
+.intent-kicker {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+}
+
+.intent-card h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.3rem);
+  max-width: 12ch;
+}
+
+.intent-card p {
+  margin: 0.9rem 0 1.3rem;
+  color: var(--text-muted);
+  max-width: 38ch;
+}
+
+/* --------------------------------------------
+   Client journey
+   -------------------------------------------- */
+
+.journey {
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  padding: 1.6rem 1.6rem 1.4rem;
+}
+
+.journey-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 1.6rem;
+}
+
+.journey-tab {
+  min-height: 48px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  color: var(--text-muted);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease),
+    background 0.25s var(--ease);
+}
+
+.journey-tab:hover,
+.journey-tab.is-active {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.journey-tab.is-active {
+  background: rgba(196, 165, 116, 0.1);
+  color: var(--accent);
+}
+
+.journey-steps {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1.6rem;
+  counter-reset: step;
+}
+
+.journey-steps li {
+  min-width: 0;
+}
+
+.journey-step {
+  width: 100%;
+  min-height: 76px;
+  padding: 0.7rem 0.65rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--text-muted);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease),
+    background 0.25s var(--ease);
+}
+
+.journey-step:hover,
+.journey-step.is-active {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.journey-step.is-active {
+  background: rgba(196, 165, 116, 0.08);
+}
+
+.journey-step.is-complete {
+  border-color: rgba(196, 165, 116, 0.35);
+}
+
+.journey-step-num {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+
+.journey-step-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: inherit;
+  line-height: 1.2;
+}
+
+.journey-panel {
+  border-top: 1px solid var(--line);
+  padding-top: 1.5rem;
+  min-height: 240px;
+}
+
+.journey-step-index {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  margin-bottom: 0.45rem;
+}
+
+.journey-panel h3 {
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+  margin-bottom: 0.7rem;
+}
+
+.journey-panel > p {
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+
+.journey-points {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1.1rem 0 1.5rem;
+  color: var(--text);
+}
+
+.journey-points li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+}
+
+.journey-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.journey-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.journey-actions .btn:disabled {
+  opacity: 0.38;
+  pointer-events: none;
+  transform: none;
+}
+
+.journey-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+
+.journey-demo-note {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  max-width: 46ch;
+}
+
+.journey-progress {
+  height: 2px;
+  background: var(--line);
+  margin: 0 0 1.2rem;
+  overflow: hidden;
+}
+
+.journey-progress span {
+  display: block;
+  height: 100%;
+  width: 20%;
+  background: var(--accent);
+  transition: width 0.4s var(--ease);
+}
+
+/* --------------------------------------------
+   Testimonials
+   -------------------------------------------- */
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.quote-card {
+  margin: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  padding: 1.8rem 1.6rem 1.5rem;
+}
+
+.quote-card p {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.quote-card footer {
+  margin-top: 1.3rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.quote-card cite {
+  font-style: normal;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quote-card footer span {
+  color: var(--text-faint);
+  font-size: 0.88rem;
+}
+
+/* --------------------------------------------
    Responsive
    -------------------------------------------- */
+
+@media (max-width: 1180px) {
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.7rem;
+  }
+}
 
 @media (max-width: 1100px) {
   .hero {
@@ -1049,8 +1368,21 @@ ul {
   .contact-grid,
   .footer-top,
   .work-grid,
-  .work-card-wide {
+  .work-card-wide,
+  .intent-split,
+  .quote-grid {
     grid-template-columns: 1fr;
+  }
+
+  .journey-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-step {
+    min-height: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
   }
 
   .hero {
@@ -1122,7 +1454,9 @@ ul {
   }
 
   .hero-actions,
-  .footer-bottom {
+  .footer-bottom,
+  .cta-actions,
+  .journey-actions {
     flex-direction: column;
     align-items: stretch;
   }
