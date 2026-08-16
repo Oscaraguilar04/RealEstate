@@ -38,7 +38,6 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -432,9 +431,9 @@ ul {
   min-height: calc(100svh - var(--header-h));
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: minmax(0, 1fr);
   column-gap: 1.5rem;
-  padding: 1.25rem 0 3.25rem;
+  padding: 1.1rem 0 2rem;
 }
 
 .hero-mast {
@@ -442,7 +441,8 @@ ul {
   grid-row: 1;
   z-index: 3;
   pointer-events: none;
-  padding-top: 0.4rem;
+  align-self: start;
+  padding-top: 0.2rem;
 }
 
 .hero-mast .eyebrow {
@@ -451,7 +451,7 @@ ul {
 
 .hero-given {
   display: block;
-  font-size: clamp(4.4rem, 14.5vw, 12.25rem);
+  font-size: clamp(4.4rem, 13vw, 10.75rem);
   font-weight: 300;
   line-height: 0.78;
   letter-spacing: -0.045em;
@@ -473,10 +473,11 @@ ul {
 
 .hero-copy {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 1;
   z-index: 3;
   max-width: 34rem;
-  padding-top: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0.15rem;
   align-self: end;
 }
 
@@ -506,18 +507,20 @@ ul {
 
 .hero-visual {
   grid-column: 2;
-  grid-row: 1 / -1;
+  grid-row: 1;
   position: relative;
   z-index: 1;
-  margin: 0.6rem -0.4rem 0 0;
+  margin: 0.4rem -0.4rem 0 0;
   min-height: 0;
   align-self: stretch;
+  height: 100%;
 }
 
 .hero-visual img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  min-height: calc(100svh - var(--header-h) - 4.5rem);
   object-fit: cover;
   object-position: 62% center;
 }
@@ -550,11 +553,12 @@ ul {
 
 .about {
   position: relative;
+  overflow: hidden;
 }
 
 .er-mark {
   position: absolute;
-  right: -0.12em;
+  right: 0;
   top: 4%;
   z-index: 0;
   font-family: var(--font-display);
@@ -1153,6 +1157,7 @@ ul {
   width: 100%;
   max-width: 100%;
   margin: 0;
+  position: relative;
   padding: 1.35rem 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -1635,39 +1640,67 @@ ul {
   }
 
   .hero-visual img {
-    min-height: 58vh;
-    height: 58vh;
+    position: static;
+    inset: auto;
+    min-height: 44vh;
+    height: 44vh;
+    width: 100%;
   }
 
   .hero-visual::before {
     display: none;
   }
 
+  .hero-visual::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 34%;
+    background: linear-gradient(180deg, transparent, var(--bg) 92%);
+    pointer-events: none;
+  }
+
   .hero-mast {
     order: 2;
     pointer-events: auto;
-    margin-top: -2.8rem;
+    margin-top: -6.25rem;
     padding: 0 1.25rem;
+    text-align: left;
   }
 
   .hero-copy {
     order: 3;
     max-width: none;
-    padding: 0.35rem 1.25rem 0;
+    padding: 0.2rem 1.25rem 0;
+    text-align: left;
   }
 
   .hero-given {
-    font-size: clamp(4.1rem, 18vw, 5.4rem);
+    font-size: clamp(3.7rem, 16vw, 4.8rem);
   }
 
   .hero-family {
-    margin-left: 1.6rem;
-    font-size: clamp(2.1rem, 9vw, 2.8rem);
+    margin-left: 1.35rem;
+    font-size: clamp(1.85rem, 8vw, 2.45rem);
+  }
+
+  .hero-line {
+    max-width: 18ch;
+    font-size: clamp(1.35rem, 5.5vw, 1.7rem);
+  }
+
+  .hero-lede {
+    margin-top: 0.85rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.35rem;
   }
 
   .hero-caption {
-    left: 1rem;
-    bottom: 3.4rem;
+    display: none;
   }
 
   .intent-card,
@@ -1744,12 +1777,12 @@ ul {
   }
 
   .hero-visual img {
-    min-height: 54vh;
-    height: 54vh;
+    min-height: 42vh;
+    height: 42vh;
   }
 
   .hero-mast {
-    margin-top: -2.4rem;
+    margin-top: -3.6rem;
   }
 
   .featured-media,
@@ -1822,5 +1855,15 @@ ul {
 @media (min-width: 1024px) and (max-width: 1180px) {
   .hero-given {
     font-size: clamp(4.6rem, 11vw, 9rem);
+  }
+}
+
+@media (min-width: 901px) and (max-height: 820px) {
+  .hero-given {
+    font-size: clamp(3.8rem, 9vw, 7.2rem);
+  }
+
+  .hero-family {
+    font-size: clamp(2rem, 4.5vw, 3.6rem);
   }
 }

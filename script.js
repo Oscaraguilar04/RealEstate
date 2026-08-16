@@ -121,7 +121,7 @@
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -48px 0px" }
+      { threshold: 0.08, rootMargin: "0px 0px -24px 0px" }
     );
 
     document.querySelectorAll(".reveal").forEach(function (el) {
@@ -135,6 +135,15 @@
     document.querySelectorAll(".support-listings .reveal").forEach(function (el, index) {
       el.style.transitionDelay = 80 + index * 110 + "ms";
     });
+
+    window.setTimeout(function () {
+      document.querySelectorAll(".reveal").forEach(function (el) {
+        var rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add("is-visible");
+        }
+      });
+    }, 900);
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) {
       el.classList.add("is-visible");
