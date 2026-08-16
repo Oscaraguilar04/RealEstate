@@ -160,7 +160,7 @@
           "A weekly recap so nothing gets lost"
         ],
         cta: "Request a private tour",
-        intent: "tour"
+        intent: "buying"
       },
       {
         title: "Offer strategy",
@@ -415,7 +415,7 @@
   document.querySelectorAll(".listing-cta").forEach(function (link) {
     link.addEventListener("click", function () {
       var listing = link.getAttribute("data-listing") || "a current listing";
-      prefillContact("tour", "I would like a private tour of " + listing + ".");
+      prefillContact("buying", "I would like a private tour of " + listing + ".");
     });
   });
 
@@ -436,10 +436,11 @@
 
       var name = form.elements.namedItem("name");
       var email = form.elements.namedItem("email");
+      var phone = form.elements.namedItem("phone");
       var intent = form.elements.namedItem("intent");
       var message = form.elements.namedItem("message");
       var valid = true;
-      var fields = [name, email, intent, message];
+      var fields = [name, email, phone, intent, message];
 
       fields.forEach(function (input) {
         var empty = !input.value.trim();
