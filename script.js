@@ -109,7 +109,9 @@
   setActiveLink();
   window.addEventListener("scroll", setActiveLink, { passive: true });
 
-  if ("IntersectionObserver" in window) {
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if ("IntersectionObserver" in window && !reduceMotion) {
     var revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -119,12 +121,19 @@
           }
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.16, rootMargin: "0px 0px -48px 0px" }
     );
 
-    document.querySelectorAll(".reveal").forEach(function (el, index) {
-      el.style.transitionDelay = Math.min(index % 4, 3) * 80 + "ms";
+    document.querySelectorAll(".reveal").forEach(function (el) {
       revealObserver.observe(el);
+    });
+
+    document.querySelectorAll(".quote-card.reveal").forEach(function (el, index) {
+      el.style.transitionDelay = index * 140 + "ms";
+    });
+
+    document.querySelectorAll(".support-listings .reveal").forEach(function (el, index) {
+      el.style.transitionDelay = 80 + index * 110 + "ms";
     });
   } else {
     document.querySelectorAll(".reveal").forEach(function (el) {

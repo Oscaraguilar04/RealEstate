@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -73,34 +73,40 @@
 
     <main id="main">
       <section class="hero" id="home">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Residential Real Estate · Bakersfield, California</p>
-          <h1>
-            <span class="hero-name">Esme Rodriguez</span>
-            <span class="hero-line">A clearer path to your next home.</span>
-          </h1>
-          <p class="hero-lede">
-            Private representation for buyers and sellers. Calm counsel, precise
-            pricing, and a process that stays personal from first showing to keys.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Get a Home Valuation</a>
-            <a class="btn btn-ghost" href="#work">View Homes for Sale</a>
+        <div class="hero-stage">
+          <figure class="hero-visual reveal">
+            <img
+              src="assets/esme-portrait.jpg"
+              alt="Portrait of Esme Rodriguez, residential real estate advisor"
+              width="1024"
+              height="1536"
+            />
+            <figcaption class="hero-caption">
+              <span>Bakersfield</span>
+              <span>California</span>
+            </figcaption>
+          </figure>
+
+          <div class="hero-mast reveal">
+            <p class="eyebrow">Residential Real Estate · Bakersfield, California</p>
+            <h1>
+              <span class="hero-given">Esme</span>
+              <span class="hero-family">Rodriguez</span>
+            </h1>
+          </div>
+
+          <div class="hero-copy reveal">
+            <p class="hero-line">A clearer path to your next home.</p>
+            <p class="hero-lede">
+              Private representation for buyers and sellers. Calm counsel, precise
+              pricing, and a process that stays personal from first showing to keys.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Get a Home Valuation</a>
+              <a class="btn btn-ghost" href="#work">View Homes for Sale</a>
+            </div>
           </div>
         </div>
-
-        <figure class="hero-visual reveal">
-          <img
-            src="assets/esme-portrait.jpg"
-            alt="Portrait of Esme Rodriguez, residential real estate advisor"
-            width="1024"
-            height="1536"
-          />
-          <figcaption class="hero-caption">
-            <span>Esme Rodriguez</span>
-            <span>Realtor</span>
-          </figcaption>
-        </figure>
       </section>
 
       <section class="intent-split" aria-label="Choose your path">
@@ -119,6 +125,7 @@
       </section>
 
       <section class="section about" id="about">
+        <span class="er-mark" aria-hidden="true">ER</span>
         <div class="section-heading reveal">
           <p class="section-index">01</p>
           <p class="eyebrow">About</p>
@@ -269,6 +276,15 @@
         </div>
       </section>
 
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span class="marquee-item">Buy · Sell · Relocate · Bakersfield · Private Representation ·</span>
+          <span class="marquee-item">Buy · Sell · Relocate · Bakersfield · Private Representation ·</span>
+          <span class="marquee-item">Buy · Sell · Relocate · Bakersfield · Private Representation ·</span>
+          <span class="marquee-item">Buy · Sell · Relocate · Bakersfield · Private Representation ·</span>
+        </div>
+      </div>
+
       <section class="section work" id="work">
         <div class="section-intro reveal">
           <div>
@@ -282,34 +298,33 @@
           </p>
         </div>
 
-        <div class="work-grid">
-          <article class="work-card work-card-featured reveal">
-            <div class="work-media">
-              <img
-                src="assets/listing-olive-estate.jpg"
-                alt="Single-story luxury estate with olive trees, palms, and a sunset sky"
-                width="1536"
-                height="1024"
-                loading="lazy"
-              />
-              <p class="work-price-tag">$2,150,000</p>
-            </div>
-            <div class="work-body">
-              <p class="work-category">For sale</p>
-              <h3>The Olive Estate</h3>
-              <p class="work-location">Seven Oaks · Bakersfield, CA</p>
-              <p class="work-price-text">$2,150,000</p>
-              <p class="work-meta">5 bed · 4.5 bath · 3-car garage</p>
-              <p>
-                A private ranch estate with mature olive trees, palms, and a
-                quiet front lawn. Warm evening light and rooms meant for a
-                long stay.
-              </p>
-              <a class="text-link listing-cta" href="#contact" data-listing="The Olive Estate">Request a Private Tour</a>
-            </div>
-          </article>
+        <article class="featured-residence reveal">
+          <figure class="featured-media">
+            <img
+              src="assets/listing-olive-estate.jpg"
+              alt="Single-story luxury estate with olive trees, palms, and a sunset sky"
+              width="1536"
+              height="1024"
+              loading="lazy"
+            />
+          </figure>
+          <div class="featured-copy">
+            <p class="work-category">Featured residence</p>
+            <h3 class="featured-name">The Olive Estate</h3>
+            <p class="work-location">Seven Oaks · Bakersfield, CA</p>
+            <p class="work-price-text featured-price">$2,150,000</p>
+            <p class="work-meta">5 bed · 4.5 bath · 4,280 sq ft · 3-car</p>
+            <p class="featured-desc">
+              A private ranch estate with mature olive trees, palms, and a
+              quiet front lawn. Warm evening light and rooms meant for a
+              long stay.
+            </p>
+            <a class="btn btn-primary listing-cta" href="#contact" data-listing="The Olive Estate">Schedule a Private Tour</a>
+          </div>
+        </article>
 
-          <article class="work-card work-card-side reveal">
+        <div class="support-listings">
+          <article class="work-card reveal">
             <div class="work-media">
               <img
                 src="assets/listing-stone-arch.jpg"
@@ -318,23 +333,22 @@
                 height="1024"
                 loading="lazy"
               />
-              <p class="work-price-tag">$1,395,000</p>
             </div>
             <div class="work-body">
               <p class="work-category">For sale</p>
               <h3>Stone &amp; Arch Residence</h3>
               <p class="work-location">Belcourt · Bakersfield, CA</p>
               <p class="work-price-text">$1,395,000</p>
-              <p class="work-meta">4 bed · 3.5 bath · 3-car garage</p>
+              <p class="work-meta">4 bed · 3.5 bath · 3,150 sq ft</p>
               <p>
                 Off-white stucco, stacked stone, and a columned arched entry.
                 Formal hedges and a three-car garage on a single-story lot.
               </p>
-              <a class="text-link listing-cta" href="#contact" data-listing="Stone &amp; Arch Residence">Request a Private Tour</a>
+              <a class="text-link listing-cta" href="#contact" data-listing="Stone &amp; Arch Residence">View Residence</a>
             </div>
           </article>
 
-          <article class="work-card work-card-palm reveal">
+          <article class="work-card reveal">
             <div class="work-media">
               <img
                 src="assets/listing-palm-ranch.jpg"
@@ -343,24 +357,23 @@
                 height="1024"
                 loading="lazy"
               />
-              <p class="work-price-tag">$1,325,000</p>
             </div>
             <div class="work-body">
               <p class="work-category">For sale</p>
               <h3>Palm Court Ranch</h3>
               <p class="work-location">Northwest · Bakersfield, CA</p>
               <p class="work-price-text">$1,325,000</p>
-              <p class="work-meta">4 bed · 3 bath · 3-car garage</p>
+              <p class="work-meta">4 bed · 3 bath · 2,860 sq ft</p>
               <p>
                 A Mediterranean ranch with a stone-framed entry, palm trees,
                 and a paver drive. Bright, single-level living with room to
                 gather.
               </p>
-              <a class="text-link listing-cta" href="#contact" data-listing="Palm Court Ranch">Request a Private Tour</a>
+              <a class="text-link listing-cta" href="#contact" data-listing="Palm Court Ranch">View Residence</a>
             </div>
           </article>
 
-          <article class="work-card work-card-wide reveal">
+          <article class="work-card reveal">
             <div class="work-media">
               <img
                 src="assets/listing-dusk-terrace.jpg"
@@ -369,19 +382,18 @@
                 height="1024"
                 loading="lazy"
               />
-              <p class="work-price-tag">$1,095,000</p>
             </div>
             <div class="work-body">
               <p class="work-category">For sale</p>
               <h3>Dusk Terrace</h3>
               <p class="work-location">Belcourt · Bakersfield, CA</p>
               <p class="work-price-text">$1,095,000</p>
-              <p class="work-meta">3 bed · 2.5 bath · 3-car garage</p>
+              <p class="work-meta">3 bed · 2.5 bath · 2,240 sq ft</p>
               <p>
                 A clean single-story with desert-modern grounds, a rectangular
                 lawn, and lantern light at dusk. Easy to keep, easy to live in.
               </p>
-              <a class="text-link listing-cta" href="#contact" data-listing="Dusk Terrace">Request a Private Tour</a>
+              <a class="text-link listing-cta" href="#contact" data-listing="Dusk Terrace">View Residence</a>
             </div>
           </article>
         </div>
