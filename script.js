@@ -170,14 +170,14 @@
         intent: "buying"
       },
       {
-        title: "Search & private tours",
+        title: "Search & home tours",
         copy: "Esme builds a short list, including off-market opportunities when they fit. Tours are scheduled in a single block so you can compare homes in one afternoon.",
         points: [
           "Live inventory plus quiet listings",
           "On-site notes after every showing",
           "A weekly recap so nothing gets lost"
         ],
-        cta: "Request a private tour",
+        cta: "Request a showing",
         intent: "buying"
       },
       {
@@ -217,7 +217,7 @@
     sell: [
       {
         title: "Home valuation",
-        copy: "A private pricing conversation grounded in recent sales, the condition of your home, and the timing you actually need — not a number designed to win the listing.",
+        copy: "A pricing conversation grounded in recent sales, the condition of your home, and the timing you actually need — not a number designed to win the listing.",
         points: [
           "On-site walkthrough and comparable set",
           "Net-sheet so you see proceeds, not just price",
@@ -432,10 +432,44 @@
 
   document.querySelectorAll(".listing-cta").forEach(function (link) {
     link.addEventListener("click", function () {
-      var listing = link.getAttribute("data-listing") || "a current listing";
-      prefillContact("buying", "I would like a private tour of " + listing + ".");
+      closeListingDialog();
+      var listing = link.getAttribute("data-listing") || "a sample listing";
+      prefillContact("buying", "I would like a showing of " + listing + ".");
     });
   });
+
+  var listingDialog = document.getElementById("listing-olive");
+
+  function openListingDialog() {
+    if (!listingDialog || typeof listingDialog.showModal !== "function") return;
+    listingDialog.showModal();
+  }
+
+  function closeListingDialog() {
+    if (!listingDialog || !listingDialog.open) return;
+    listingDialog.close();
+  }
+
+  document.querySelectorAll("[data-open-listing]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      openListingDialog();
+    });
+  });
+
+  document.querySelectorAll("[data-close-listing]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      closeListingDialog();
+    });
+  });
+
+  if (listingDialog) {
+    listingDialog.addEventListener("click", function (event) {
+      if (event.target === listingDialog) closeListingDialog();
+    });
+    if (window.location.hash === "#olive" || window.location.hash === "#listing-olive") {
+      openListingDialog();
+    }
+  }
 
   if (stepsEl) renderJourney();
 
@@ -476,7 +510,7 @@
         return;
       }
 
-      statusEl.textContent = "Thank you. Esme will follow up to confirm next steps.";
+      statusEl.textContent = "Thank you. On a live agent website, this request would go to the advisor directly.";
       form.reset();
       fields.forEach(function (input) {
         setFieldError(input, false);
