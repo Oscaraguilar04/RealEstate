@@ -466,6 +466,9 @@
     listingDialog.addEventListener("click", function (event) {
       if (event.target === listingDialog) closeListingDialog();
     });
+    if (window.location.hash === "#olive" || window.location.hash === "#listing-olive") {
+      openListingDialog();
+    }
   }
 
   if (stepsEl) renderJourney();
